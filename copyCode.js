@@ -1,9 +1,10 @@
 // ==UserScript==
-// @name         Copy Code
-// @version      0.1
-// @description  Adds a copy button after 'pre' tags.
 // @author       Vamsi Krishna | vamsi_ism@outlook.com
+// @description  Adds a copy button after 'pre' tags.
+// @homepage     https://github.com/krikx/CopyCode
 // @match        *://*/*
+// @name         CopyCode
+// @version      0.1
 // ==/UserScript==
 
 onload = function(){
