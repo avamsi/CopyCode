@@ -1,14 +1,17 @@
 // ==UserScript==
-// @author       Vamsi Krishna | vamsi_ism@outlook.com
-// @description  Adds a copy button after 'pre' tags.
-// @grant        none
-// @homepage     https://github.com/krikx/CopyCode
-// @match        *://*/*
-// @name         CopyCode
-// @version      0.1
+// @author           Vamsi Krishna | vamsi_ism@outlook.com
+// @description      Adds a copy button after 'pre' tags.
+// @exclude          https://www.quora.com/*
+// @exclude          https://ideone.com/*
+// @grant            none
+// @homepage         https://github.com/krikx/CopyCode
+// @match            *://*/*
+// @name             CopyCode
+// @run-at           document-idle
+// @version          0.1
 // ==/UserScript==
 
-var css = "/* google fonts */ @import url(https://fonts.googleapis.com/css?family=Open+Sans); .kxbt { border-radius: 4px; cursor: pointer; display: inline-block; font-family: 'Open Sans', 'sans-serif'; font-size: 15px; margin-bottom: 5px; padding: 5px; padding-top: 3px; transition: .2s; } .blue { color: #55acee; border: 1px #55acee solid; } .blue:hover { background-color: #55acee; color: #fff; } .green { color: #2ecc71; border: 1px #2ecc71 solid; } .green:hover { color: #fff; background-color: #2ecc71; } .red { color: #e74c3c; border: 1px #e74c3c solid; } .red:hover { color: #fff; background-color: #e74c3c; } /* green and red are almost never used as timeout is too fast to observe any noticible difference */";
+var css = ".kxbt { border-radius: 4px; cursor: pointer; display: inline-block; font-family: 'Open Sans', 'sans-serif'; font-size: 15px; margin-bottom: 5px; padding: 5px; padding-top: 3px; transition: .2s; } .blue { color: #55acee; border: 1px #55acee solid; } .blue:hover { background-color: #55acee; color: #fff; } .green { color: #2ecc71; border: 1px #2ecc71 solid; } .green:hover { color: #fff; background-color: #2ecc71; } .red { color: #e74c3c; border: 1px #e74c3c solid; } .red:hover { color: #fff; background-color: #e74c3c; } /* green and red are almost never used as timeout is too fast to observe any noticible difference */";
 var style = document.createElement('style');
 style.innerHTML = css;
 document.getElementsByTagName('head')[0].appendChild(style);
@@ -57,7 +60,7 @@ function Copy(btn, block){
 			btn.setAttribute('class', 'kxbt blue');
 		},
 		256, btn
-	)
+	);
 }
 
 function main(){
@@ -72,5 +75,4 @@ function main(){
 	Init();
 }
 
-// wait until ready
-window.addEventListener('load', main);
+main();
